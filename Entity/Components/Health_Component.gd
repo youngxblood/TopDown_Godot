@@ -2,19 +2,49 @@ extends Node
 
 class_name HealthComponent
 
-@export var max_health : int = 10;
-@export var defense_modifier : int = 3;
-var current_health : int;
+@export var max_health : float = 10;
+@export var defense_modifier : float = 3;
+@export var suppress_damage : bool =  false;
+
+var current_health : float;
+var owner_is_dead : bool = false;
+
 
 func _ready():
-	current_health = max_health;
+	initialize_health();
 
 
 ## Method to change apply damage to the health component
-func change_current_health(damage_taken: int):
+func damage_owner(damage_taken: float):
 	current_health -= apply_damage_reduction(damage_taken);
 
+	if current_health <= 0:
+		owner_is_dead = true;
+		kill_owner();
 
-func apply_damage_reduction(damage_to_reduce : int):
+
+## Method to apply damage reduction (ie. armour)
+func apply_damage_reduction(damage_to_reduce : float):
 	damage_to_reduce -= defense_modifier;
 	return damage_to_reduce;
+
+
+## Method to heal the owner
+func heal_owner(heal_amount : float):
+	current_health += heal_amount;
+	clamp(current_health, 0, max_health);
+
+
+## Set max health
+func set_max_health(new_max_health : float):
+	max_health = new_max_health;
+
+
+## Used to set current health to the maximum health
+func initialize_health():
+	current_health = max_health;
+
+
+## Destroys the owner of the Health Component
+func kill_owner():
+	queue_free();
