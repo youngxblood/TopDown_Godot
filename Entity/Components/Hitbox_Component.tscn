@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://bjfdldpe4j15s"]
+[gd_scene load_steps=3 format=3 uid="uid://fawge8u24ljg"]
 
-[node name="Node" type="Node"]
+[ext_resource type="Script" path="res://Entity/Components/hitbox_component.gd" id="1_a4uyo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rycdl"]
+
+[node name="Hitbox_Component" type="Area2D"]
+script = ExtResource("1_a4uyo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_rycdl")

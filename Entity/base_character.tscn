@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dy2aynllug5hw"]
+[gd_scene load_steps=4 format=3 uid="uid://dy2aynllug5hw"]
 
 [ext_resource type="Script" path="res://Entity/base_character.gd" id="1_em5ey"]
+[ext_resource type="PackedScene" uid="uid://dqd75j7k7oew1" path="res://Entity/Components/hurtbox_component.tscn" id="2_q0bas"]
+[ext_resource type="PackedScene" uid="uid://8snhwekfqyu2" path="res://Entity/Components/health_component.tscn" id="3_6v4lh"]
 
-[node name="BaseCharacter" type="Node2D"]
+[node name="BaseCharacter" type="CharacterBody2D"]
 script = ExtResource("1_em5ey")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -10,3 +12,7 @@ script = ExtResource("1_em5ey")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Hurtbox_Component" parent="." instance=ExtResource("2_q0bas")]
+
+[node name="Health_Component" parent="." instance=ExtResource("3_6v4lh")]

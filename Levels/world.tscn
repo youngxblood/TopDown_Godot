@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhe5fyff6q5fn"]
+
+[ext_resource type="PackedScene" uid="uid://khlhtr4ye3m4" path="res://Entity/Player/player_character.tscn" id="1_qp1se"]
+[ext_resource type="Texture2D" uid="uid://eviwtf535u8t" path="res://Resources/Sprites/Sunnyland Trees/Sprites/Trees.png" id="2_17ciy"]
+
+[node name="World" type="Node2D"]
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("1_qp1se")]
+position = Vector2(18, 271)
+
+[node name="Trees" type="Sprite2D" parent="."]
+position = Vector2(-53, 286)
+texture = ExtResource("2_17ciy")

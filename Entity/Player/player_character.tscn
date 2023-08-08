@@ -1,7 +1,107 @@
-[gd_scene load_steps=3 format=3 uid="uid://khlhtr4ye3m4"]
+[gd_scene load_steps=20 format=3 uid="uid://khlhtr4ye3m4"]
 
 [ext_resource type="PackedScene" uid="uid://dy2aynllug5hw" path="res://Entity/base_character.tscn" id="1_fua3u"]
 [ext_resource type="Script" path="res://Entity/Player/player_character.gd" id="1_smtgq"]
+[ext_resource type="Texture2D" uid="uid://dx7ltwnloucvq" path="res://Resources/Sprites/Player/knight/knight_idle_anim_f0.png" id="3_285r0"]
+[ext_resource type="Texture2D" uid="uid://xyd8ryfghpx5" path="res://Resources/Sprites/Player/knight/knight_idle_anim_f1.png" id="4_cprb8"]
+[ext_resource type="Texture2D" uid="uid://c2bfmpdwl8t0a" path="res://Resources/Sprites/Player/knight/knight_idle_anim_f2.png" id="5_nlsoj"]
+[ext_resource type="Texture2D" uid="uid://dkl7htfihqgkk" path="res://Resources/Sprites/Player/knight/knight_idle_anim_f3.png" id="6_38d12"]
+[ext_resource type="Texture2D" uid="uid://cqimblv2dd6nk" path="res://Resources/Sprites/Player/knight/knight_idle_anim_f4.png" id="7_wumig"]
+[ext_resource type="Texture2D" uid="uid://b88ct5epfwo7d" path="res://Resources/Sprites/Player/knight/knight_idle_anim_f5.png" id="8_dyyoi"]
+[ext_resource type="Texture2D" uid="uid://dobrk54y8ui1h" path="res://Resources/Sprites/Player/knight/knight_run_anim_f0.png" id="9_i7yfo"]
+[ext_resource type="Texture2D" uid="uid://dol5207521gwf" path="res://Resources/Sprites/Player/knight/knight_run_anim_f1.png" id="10_owogt"]
+[ext_resource type="Texture2D" uid="uid://dnh7cd182e6xt" path="res://Resources/Sprites/Player/knight/knight_run_anim_f2.png" id="11_qm32p"]
+[ext_resource type="Texture2D" uid="uid://d1akmk01v3k80" path="res://Resources/Sprites/Player/knight/knight_run_anim_f3.png" id="12_mefy3"]
+[ext_resource type="Texture2D" uid="uid://hnghx0w5s3h4" path="res://Resources/Sprites/Player/knight/knight_run_anim_f4.png" id="13_ggjwa"]
+[ext_resource type="Texture2D" uid="uid://bop3aq2f1kshk" path="res://Resources/Sprites/Player/knight/knight_run_anim_f5.png" id="14_6uyc8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6jbvs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_285r0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cprb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nlsoj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_38d12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wumig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dyyoi")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_i7yfo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_owogt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qm32p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_mefy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ggjwa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_6uyc8")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m17am"]
+radius = 5.0
+height = 14.0
+
+[sub_resource type="Animation" id="Animation_kbo6b"]
+resource_name = "Idle"
+
+[sub_resource type="Animation" id="Animation_ujcmy"]
+resource_name = "Run"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dilv5"]
+_data = {
+"Idle": SubResource("Animation_kbo6b"),
+"Run": SubResource("Animation_ujcmy")
+}
 
 [node name="PlayerCharacter" instance=ExtResource("1_fua3u")]
 script = ExtResource("1_smtgq")
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(0, -6)
+sprite_frames = SubResource("SpriteFrames_6jbvs")
+animation = &"Run"
+frame = 2
+frame_progress = 0.917276
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -7)
+shape = SubResource("CapsuleShape2D_m17am")
+
+[node name="AnimationPlayer" parent="." index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_dilv5")
+}
+
+[node name="CollisionShape2D" parent="Hurtbox_Component" index="0"]
+position = Vector2(0, -7)
+
+[node name="Camera2D" type="Camera2D" parent="." index="5"]
+
+[editable path="Hurtbox_Component"]
