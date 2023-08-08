@@ -1,6 +1,8 @@
-extends Node
-
+extends Node2D
 class_name HealthComponent
+
+signal health_changed(new_health : float); ## Signal that is fired when health changes
+signal owner_died; ## Signal that is fired when the owner dies
 
 @export var max_health : float = 10;
 @export var defense_modifier : float = 3;
@@ -33,6 +35,7 @@ func apply_damage_reduction(damage_to_reduce : float):
 func heal_owner(heal_amount : float):
 	current_health += heal_amount;
 	clamp(current_health, 0, max_health);
+	health_changed.emit(current_health);
 
 
 ## Set max health
