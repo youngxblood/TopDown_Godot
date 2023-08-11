@@ -1,4 +1,5 @@
 extends "res://Entity/base_character.gd"
+class_name PlayerCharacter
 
 @export var speed : float = 300;
 var current_velocity : Vector2 = Vector2.ZERO

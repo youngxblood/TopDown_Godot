@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://g35yl0csrrvw"]
+[gd_scene load_steps=22 format=3 uid="uid://g35yl0csrrvw"]
 
 [ext_resource type="PackedScene" uid="uid://dy2aynllug5hw" path="res://Entity/base_character.tscn" id="1_8av3a"]
 [ext_resource type="Texture2D" uid="uid://chu1s7iuyrimp" path="res://Resources/Sprites/Enemies/goblin/goblin_idle_anim_f0.png" id="2_oxnfg"]
 [ext_resource type="Script" path="res://Entity/Enemies/slime_enemy.gd" id="2_stv4p"]
+[ext_resource type="PackedScene" uid="uid://cjmjd72i8lgec" path="res://Entity/Components/movement_component.tscn" id="3_bkylh"]
 [ext_resource type="Texture2D" uid="uid://doo7x8omiv57y" path="res://Resources/Sprites/Enemies/goblin/goblin_idle_anim_f1.png" id="3_ml6uy"]
 [ext_resource type="Texture2D" uid="uid://culqqxknyspfs" path="res://Resources/Sprites/Enemies/goblin/goblin_idle_anim_f2.png" id="4_h8rob"]
 [ext_resource type="Texture2D" uid="uid://omfhfs51x0qc" path="res://Resources/Sprites/Enemies/goblin/goblin_idle_anim_f3.png" id="5_0qo8u"]
@@ -142,17 +143,22 @@ _data = {
 "Run": SubResource("Animation_4ppyl")
 }
 
-[node name="Slime_Enemy" instance=ExtResource("1_8av3a")]
+[node name="Slime_Enemy" node_paths=PackedStringArray("detectionarea_component", "movement_component") instance=ExtResource("1_8av3a")]
+scale = Vector2(5, 5)
 script = ExtResource("2_stv4p")
+detectionarea_component = NodePath("DetectionArea_Component")
+movement_component = NodePath("Movement_Component")
 
-[node name="AnimatedSprite2D" parent="." index="0"]
+[node name="Movement_Component" parent="." index="0" instance=ExtResource("3_bkylh")]
+
+[node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_nkgw1")
-animation = &"Run"
+animation = &"Idle"
 frame = 1
 
-[node name="AnimationPlayer" parent="." index="2"]
+[node name="AnimationPlayer" parent="." index="3"]
 libraries = {
 "": SubResource("AnimationLibrary_levnd")
 }
 
-[node name="DetectionArea_Component" parent="." index="5" instance=ExtResource("15_yeidl")]
+[node name="DetectionArea_Component" parent="." index="6" instance=ExtResource("15_yeidl")]
