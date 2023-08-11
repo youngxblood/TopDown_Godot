@@ -21,6 +21,3 @@ func update_animations():
 		anim_player.play("Idle")
 	if velocity != Vector2.ZERO:
 		anim_player.play("Run")
-
-
-

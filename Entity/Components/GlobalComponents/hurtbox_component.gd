@@ -2,7 +2,7 @@ extends Area2D
 
 class_name HurtboxComponent
 
-signal hit_by_bullet(bullet: Bullet)
+signal hit_by_projectile(projectile: ProjectileBase)
 
 @export var health_component : HealthComponent
 
@@ -14,8 +14,8 @@ func can_accept_bullet_collision():
 		return false;
 
 
-func handle_bullet_collision(bullet : Bullet):
-	hit_by_bullet.emit(bullet);
+func handle_projectile_collision(projectile : ProjectileBase):
+	hit_by_projectile.emit(projectile);
 
 
 func _on_area_entered(other_area):

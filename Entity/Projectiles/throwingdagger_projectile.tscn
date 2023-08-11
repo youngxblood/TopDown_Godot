@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://455pdfhnfig5"]
+
+[ext_resource type="PackedScene" uid="uid://daq84x7vsorbe" path="res://Entity/Projectiles/projectile_base.tscn" id="1_aytlx"]
+[ext_resource type="Texture2D" uid="uid://dlbhhgipetrtq" path="res://Resources/Sprites/Weapons/weapon_sword_1.png" id="2_57j58"]
+
+[node name="ThrowingDagger_Projectile" instance=ExtResource("1_aytlx")]
+
+[node name="Sprite2D" parent="." index="0"]
+rotation = 0.785398
+texture = ExtResource("2_57j58")
+
+[editable path="Hitbox_Component"]
+[editable path="projectiledamage_component"]

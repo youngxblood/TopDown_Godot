@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhe5fyff6q5fn"]
+[gd_scene load_steps=5 format=3 uid="uid://dhe5fyff6q5fn"]
 
 [ext_resource type="PackedScene" uid="uid://khlhtr4ye3m4" path="res://Entity/Player/player_character.tscn" id="1_qp1se"]
 [ext_resource type="Texture2D" uid="uid://eviwtf535u8t" path="res://Resources/Sprites/Sunnyland Trees/Sprites/Trees.png" id="2_17ciy"]
 [ext_resource type="PackedScene" uid="uid://g35yl0csrrvw" path="res://Entity/Enemies/slime_enemy.tscn" id="3_tudn4"]
+[ext_resource type="PackedScene" uid="uid://455pdfhnfig5" path="res://Entity/Projectiles/throwingdagger_projectile.tscn" id="4_brfqe"]
 
 [node name="World" type="Node2D"]
 
@@ -15,3 +16,6 @@ texture = ExtResource("2_17ciy")
 
 [node name="Slime_Enemy" parent="." instance=ExtResource("3_tudn4")]
 position = Vector2(329, 251)
+
+[node name="ThrowingDagger_Projectile" parent="." instance=ExtResource("4_brfqe")]
+position = Vector2(-305, 314)

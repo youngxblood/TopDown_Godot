@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dqd75j7k7oew1"]
 
-[ext_resource type="Script" path="res://Entity/Components/hurtbox_component.gd" id="1_s8prx"]
+[ext_resource type="Script" path="res://Entity/Components/GlobalComponents/hurtbox_component.gd" id="1_s8prx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_di2wq"]
 

@@ -1,9 +1,10 @@
 extends Node2D
 class_name MovementComponent
 
-@export var speed : float = 100
+@export var speed : float = 30
 
 var owner_entity : BaseCharacter
+
 
 func _ready():
 	owner_entity = self.get_owner()

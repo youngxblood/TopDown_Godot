@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dy2aynllug5hw" path="res://Entity/base_character.tscn" id="1_8av3a"]
 [ext_resource type="Texture2D" uid="uid://chu1s7iuyrimp" path="res://Resources/Sprites/Enemies/goblin/goblin_idle_anim_f0.png" id="2_oxnfg"]
 [ext_resource type="Script" path="res://Entity/Enemies/slime_enemy.gd" id="2_stv4p"]
-[ext_resource type="PackedScene" uid="uid://cjmjd72i8lgec" path="res://Entity/Components/movement_component.tscn" id="3_bkylh"]
+[ext_resource type="PackedScene" uid="uid://cjmjd72i8lgec" path="res://Entity/Components/GlobalComponents/movement_component.tscn" id="3_bkylh"]
 [ext_resource type="Texture2D" uid="uid://doo7x8omiv57y" path="res://Resources/Sprites/Enemies/goblin/goblin_idle_anim_f1.png" id="3_ml6uy"]
 [ext_resource type="Texture2D" uid="uid://culqqxknyspfs" path="res://Resources/Sprites/Enemies/goblin/goblin_idle_anim_f2.png" id="4_h8rob"]
 [ext_resource type="Texture2D" uid="uid://omfhfs51x0qc" path="res://Resources/Sprites/Enemies/goblin/goblin_idle_anim_f3.png" id="5_0qo8u"]
@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cf07cq8pf6vcg" path="res://Resources/Sprites/Enemies/goblin/goblin_run_anim_f3.png" id="11_7j150"]
 [ext_resource type="Texture2D" uid="uid://c857e3gl6tdvh" path="res://Resources/Sprites/Enemies/goblin/goblin_run_anim_f4.png" id="12_hch7o"]
 [ext_resource type="Texture2D" uid="uid://dmshg3m1lappk" path="res://Resources/Sprites/Enemies/goblin/goblin_run_anim_f5.png" id="13_q165s"]
-[ext_resource type="PackedScene" uid="uid://c2vorq2k1b8aa" path="res://Entity/Components/AI/detectionarea_component.tscn" id="15_yeidl"]
+[ext_resource type="PackedScene" uid="uid://c2vorq2k1b8aa" path="res://Entity/Components/GlobalComponents/AI/detectionarea_component.tscn" id="15_yeidl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nkgw1"]
 animations = [{
@@ -150,7 +150,6 @@ detectionarea_component = NodePath("DetectionArea_Component")
 movement_component = NodePath("Movement_Component")
 
 [node name="Movement_Component" parent="." index="0" instance=ExtResource("3_bkylh")]
-speed = 50.0
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_nkgw1")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://daq84x7vsorbe"]
+
+[ext_resource type="Script" path="res://Entity/Projectiles/projectile_base.gd" id="1_4hl4q"]
+[ext_resource type="PackedScene" uid="uid://fawge8u24ljg" path="res://Entity/Components/GlobalComponents/hitbox_component.tscn" id="1_pni8y"]
+[ext_resource type="PackedScene" uid="uid://cjlsj1tl6fmt6" path="res://Entity/Components/ProjectileComponents/projectiledamage_component.tscn" id="3_mcp2j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wsaq7"]
+
+[node name="Projectile_Base" type="Node2D"]
+script = ExtResource("1_4hl4q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Hitbox_Component" parent="." instance=ExtResource("1_pni8y")]
+
+[node name="CollisionShape2D" parent="Hitbox_Component" index="0"]
+shape = SubResource("RectangleShape2D_wsaq7")
+
+[node name="projectiledamage_component" parent="." instance=ExtResource("3_mcp2j")]
+
+[editable path="Hitbox_Component"]
+[editable path="projectiledamage_component"]
