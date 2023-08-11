@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://daq84x7vsorbe"]
+[gd_scene load_steps=6 format=3 uid="uid://daq84x7vsorbe"]
 
 [ext_resource type="Script" path="res://Entity/Projectiles/projectile_base.gd" id="1_4hl4q"]
 [ext_resource type="PackedScene" uid="uid://fawge8u24ljg" path="res://Entity/Components/GlobalComponents/hitbox_component.tscn" id="1_pni8y"]
 [ext_resource type="PackedScene" uid="uid://cjlsj1tl6fmt6" path="res://Entity/Components/ProjectileComponents/projectiledamage_component.tscn" id="3_mcp2j"]
+[ext_resource type="PackedScene" uid="uid://cc3mbvfqoygxr" path="res://Entity/Components/ProjectileComponents/projectilemovement_component.tscn" id="4_bcged"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wsaq7"]
 
@@ -13,12 +14,16 @@ hitbox_component = NodePath("Hitbox_Component")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="Hitbox_Component" parent="." node_paths=PackedStringArray("projectiledamage_component") instance=ExtResource("1_pni8y")]
-projectiledamage_component = NodePath("../projectiledamage_component")
+collision_layer = 8
+collision_mask = 7
+projectiledamage_component = NodePath("../Projectiledamage_Component")
 
 [node name="CollisionShape2D" parent="Hitbox_Component" index="0"]
 shape = SubResource("RectangleShape2D_wsaq7")
 
-[node name="projectiledamage_component" parent="." instance=ExtResource("3_mcp2j")]
+[node name="Projectiledamage_Component" parent="." instance=ExtResource("3_mcp2j")]
+
+[node name="ProjectileMovement_Component" parent="." instance=ExtResource("4_bcged")]
 
 [editable path="Hitbox_Component"]
-[editable path="projectiledamage_component"]
+[editable path="Projectiledamage_Component"]

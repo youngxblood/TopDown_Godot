@@ -15,6 +15,9 @@ func read_input():
 	var move_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = move_direction * speed
 
+	if Input.is_action_just_pressed("create_projectile"):
+		spawn_projectile()
+
 
 ## Handle sprite animations
 func update_animations():
@@ -31,3 +34,8 @@ func handle_sprite_rotation():
 		animated_sprite.flip_h = true;
 	elif direction == 1:
 		animated_sprite.flip_h = false;
+
+
+func spawn_projectile():
+	if projectilethrower_component:
+		projectilethrower_component.spawn_projectile()

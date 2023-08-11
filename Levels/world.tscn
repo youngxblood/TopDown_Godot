@@ -19,3 +19,8 @@ position = Vector2(329, 251)
 
 [node name="ThrowingDagger_Projectile" parent="." instance=ExtResource("4_brfqe")]
 position = Vector2(-305, 314)
+
+[node name="ThrowingDagger_Projectile2" parent="." node_paths=PackedStringArray("hitbox_component") instance=ExtResource("4_brfqe")]
+position = Vector2(-278, 390)
+rotation = -3.9619
+hitbox_component = NodePath("../ThrowingDagger_Projectile/Hitbox_Component")

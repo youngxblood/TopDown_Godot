@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfjbv7ji8wto3"]
+
+[ext_resource type="Script" path="res://Entity/Components/ProjectileComponents/projectilethrower_component.gd" id="1_33yxp"]
+
+[node name="ProjectileThrower_Component" type="Node2D"]
+script = ExtResource("1_33yxp")
