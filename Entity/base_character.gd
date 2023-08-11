@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
 @onready var anim_player : AnimationPlayer = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
