@@ -16,8 +16,3 @@ func can_accept_bullet_collision():
 
 func handle_projectile_collision(projectile : ProjectileBase):
 	hit_by_projectile.emit(projectile);
-
-
-func _on_area_entered(other_area):
-	if other_area is HitboxComponent:
-		print_debug("Hit a hitbox");

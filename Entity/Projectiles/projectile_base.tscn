@@ -6,12 +6,14 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wsaq7"]
 
-[node name="Projectile_Base" type="Node2D"]
+[node name="Projectile_Base" type="Node2D" node_paths=PackedStringArray("hitbox_component")]
 script = ExtResource("1_4hl4q")
+hitbox_component = NodePath("Hitbox_Component")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
-[node name="Hitbox_Component" parent="." instance=ExtResource("1_pni8y")]
+[node name="Hitbox_Component" parent="." node_paths=PackedStringArray("projectiledamage_component") instance=ExtResource("1_pni8y")]
+projectiledamage_component = NodePath("../projectiledamage_component")
 
 [node name="CollisionShape2D" parent="Hitbox_Component" index="0"]
 shape = SubResource("RectangleShape2D_wsaq7")

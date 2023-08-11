@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://Entity/Components/GlobalComponents/hurtbox_component.gd" id="1_s8prx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_di2wq"]
+radius = 5.0
+height = 14.0
 
-[node name="Hurtbox_Component" type="Area2D"]
+[node name="Hurtbox_Component" type="Area2D" groups=["Hurtbox"]]
 script = ExtResource("1_s8prx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_di2wq")
-
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]

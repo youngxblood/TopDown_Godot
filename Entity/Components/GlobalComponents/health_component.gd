@@ -50,4 +50,4 @@ func initialize_health():
 
 ## Destroys the owner of the Health Component
 func kill_owner():
-	queue_free();
+	get_owner().queue_free();
