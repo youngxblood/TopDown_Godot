@@ -150,6 +150,7 @@ detectionarea_component = NodePath("DetectionArea_Component")
 movement_component = NodePath("Movement_Component")
 
 [node name="Movement_Component" parent="." index="0" instance=ExtResource("3_bkylh")]
+speed = 50.0
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_nkgw1")

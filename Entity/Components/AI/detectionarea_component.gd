@@ -18,21 +18,19 @@ func _ready():
 ## Player enters initial detection range
 func _on_detection_start_body_entered(body):
 	if body.name == "PlayerCharacter":
-		emit_signal("player_detected")
+		emit_signal("player_detected") # Not currently used
 		player_is_detected = true
 		player = body
-		print_debug(player.name + " detected")
 
 
 ## Player leaves larger chase radius
 func _on_detection_end_body_exited(body):
 	if body.name == "PlayerCharacter":
-		print_debug(player.name + " lost")
 		player_is_detected = false
 		player = null
 		
 
-
+## If player is valid, returns their location. Otherwise, returns (0, 0)
 func return_player_location():
 	if player:
 		return player.global_position
@@ -40,5 +38,6 @@ func return_player_location():
 		return Vector2.ZERO
 
 
+## Returns boolean of whether the player is detected or not
 func check_if_player_detected():
 	return player_is_detected;

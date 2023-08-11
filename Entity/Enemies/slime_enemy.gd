@@ -8,7 +8,9 @@ class_name SlimeEnemy
 
 func _physics_process(delta):
 	if movement_component && detectionarea_component.check_if_player_detected():
-		movement_component.move_owner(detectionarea_component.return_player_location())
+		movement_component.move_owner(detectionarea_component.return_player_location(), delta)
+	else:
+		movement_component.stop_moving()
 	update_animations()
 	handle_sprite_rotation()
 	move_and_slide()
