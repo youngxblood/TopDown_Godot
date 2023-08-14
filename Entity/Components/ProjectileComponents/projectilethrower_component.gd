@@ -17,5 +17,5 @@ func spawn_projectile():
 		projectile.global_position = self.get_parent().global_position;
 		projectile.global_position.y -= 15; # Make the daggers spawn higher
 
-		var projectile_rotation = self.global_position.direction_to(get_global_mouse_position()).angle()
+		var projectile_rotation = self.get_parent().global_position.direction_to(get_global_mouse_position()).angle()
 		projectile.rotation = projectile_rotation;
