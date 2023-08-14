@@ -10,4 +10,4 @@ rotation = 0.785398
 texture = ExtResource("2_57j58")
 
 [editable path="Hitbox_Component"]
-[editable path="projectiledamage_component"]
+[editable path="Projectiledamage_Component"]

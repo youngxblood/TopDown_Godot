@@ -189,4 +189,7 @@ scale = Vector2(5, 5)
 
 [node name="Camera2D" type="Camera2D" parent="." index="5"]
 
+[node name="ProjectileThrower_Component" parent="." index="6"]
+projectile_location = "res://Entity/Projectiles/spinningsword_projectile.tscn"
+
 [editable path="Hurtbox_Component"]
