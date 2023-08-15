@@ -4,3 +4,5 @@
 
 [node name="ProjectileThrower_Component" type="Node2D"]
 script = ExtResource("1_33yxp")
+
+[node name="CooldownTimer" type="Timer" parent="."]

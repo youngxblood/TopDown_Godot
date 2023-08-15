@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cc3mbvfqoygxr" path="res://Entity/Components/ProjectileComponents/projectilemovement_component.tscn" id="4_bcged"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wsaq7"]
+size = Vector2(13, 6)
 
 [node name="Projectile_Base" type="Node2D" node_paths=PackedStringArray("hitbox_component")]
 script = ExtResource("1_4hl4q")
@@ -24,6 +25,8 @@ shape = SubResource("RectangleShape2D_wsaq7")
 [node name="Projectiledamage_Component" parent="." instance=ExtResource("3_mcp2j")]
 
 [node name="ProjectileMovement_Component" parent="." instance=ExtResource("4_bcged")]
+
+[node name="Lifetime_Timer" type="Timer" parent="."]
 
 [editable path="Hitbox_Component"]
 [editable path="Projectiledamage_Component"]

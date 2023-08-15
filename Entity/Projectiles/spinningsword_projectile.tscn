@@ -1,14 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://drxhmgxhpv0k8"]
+[gd_scene load_steps=5 format=3 uid="uid://drxhmgxhpv0k8"]
 
 [ext_resource type="PackedScene" uid="uid://daq84x7vsorbe" path="res://Entity/Projectiles/projectile_base.tscn" id="1_yipa3"]
-[ext_resource type="Texture2D" uid="uid://dlbhhgipetrtq" path="res://Resources/Sprites/Weapons/weapon_sword_1.png" id="2_e3nqa"]
 [ext_resource type="Script" path="res://Entity/Projectiles/spinningsword_projectile.gd" id="2_lawb6"]
+[ext_resource type="Texture2D" uid="uid://r6lrqm5m40rc" path="res://Resources/Sprites/Weapons/sword_curved_1.png" id="3_hw8eb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_87j0g"]
+size = Vector2(23.5, 7.92392)
 
 [node name="SpinningSword_Projectile" instance=ExtResource("1_yipa3")]
 script = ExtResource("2_lawb6")
 
 [node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("2_e3nqa")
+texture = ExtResource("3_hw8eb")
+
+[node name="CollisionShape2D" parent="Hitbox_Component" index="0"]
+position = Vector2(5, -3)
+rotation = -0.468827
+shape = SubResource("RectangleShape2D_87j0g")
 
 [node name="Projectiledamage_Component" parent="." index="2"]
 damage = 5.0
