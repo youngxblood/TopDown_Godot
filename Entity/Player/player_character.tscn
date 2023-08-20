@@ -192,4 +192,8 @@ scale = Vector2(5, 5)
 [node name="ProjectileThrower_Component" parent="." index="6"]
 projectile_location = "res://Entity/Projectiles/spinningsword_projectile.tscn"
 
+[node name="ProjectileThrower_Component" parent="Weapon_Base" index="0"]
+projectile_location = "res://Entity/Projectiles/triple_throwing_dagger_projectile.tscn"
+
 [editable path="Hurtbox_Component"]
+[editable path="Weapon_Base"]

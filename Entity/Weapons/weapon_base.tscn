@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfpigmp3hafhc"]
+
+[ext_resource type="PackedScene" uid="uid://cfjbv7ji8wto3" path="res://Entity/Components/ProjectileComponents/projectilethrower_component.tscn" id="1_b5yrf"]
+[ext_resource type="Script" path="res://Entity/Weapons/weapon_base.gd" id="1_g6dfv"]
+
+[node name="Weapon_Base" type="Node2D"]
+script = ExtResource("1_g6dfv")
+
+[node name="ProjectileThrower_Component" parent="." instance=ExtResource("1_b5yrf")]
+projectile_location = "res://Entity/Projectiles/throwingdagger_projectile.tscn"

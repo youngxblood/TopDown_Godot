@@ -24,6 +24,7 @@ func destroy_projectile():
 	self.queue_free()
 
 
+## Used to cleanup projectiles after delay for performance
 func start_projectile_timeout():
 	lifetime_timer.wait_time = timeout_time
 	lifetime_timer.start()

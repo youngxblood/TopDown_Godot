@@ -18,7 +18,7 @@ func spawn_projectile():
 	var PROJECTILE = load(projectile_location)
 	if PROJECTILE:
 		var projectile = PROJECTILE.instantiate()
-		projectile.projectile_owner = self.get_owner()
+		projectile.projectile_owner = self.get_parent().get_parent() # This is awful... but it works
 		get_tree().current_scene.add_child(projectile)
 
 

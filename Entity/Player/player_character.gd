@@ -16,7 +16,8 @@ func read_input():
 	velocity = move_direction * speed
 
 	if Input.is_action_just_pressed("create_projectile"):
-		spawn_projectile()
+		# spawn_projectile()
+		weapon.fire_weapon()
 
 
 ## Handle sprite animations

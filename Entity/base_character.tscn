@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dy2aynllug5hw"]
+[gd_scene load_steps=6 format=3 uid="uid://dy2aynllug5hw"]
 
 [ext_resource type="Script" path="res://Entity/base_character.gd" id="1_em5ey"]
 [ext_resource type="PackedScene" uid="uid://dqd75j7k7oew1" path="res://Entity/Components/GlobalComponents/hurtbox_component.tscn" id="2_q0bas"]
 [ext_resource type="PackedScene" uid="uid://8snhwekfqyu2" path="res://Entity/Components/GlobalComponents/health_component.tscn" id="3_6v4lh"]
 [ext_resource type="PackedScene" uid="uid://cfjbv7ji8wto3" path="res://Entity/Components/ProjectileComponents/projectilethrower_component.tscn" id="4_w2bsw"]
+[ext_resource type="PackedScene" uid="uid://dfpigmp3hafhc" path="res://Entity/Weapons/weapon_base.tscn" id="5_h7a22"]
 
 [node name="BaseCharacter" type="CharacterBody2D"]
 script = ExtResource("1_em5ey")
@@ -21,3 +22,5 @@ script = ExtResource("1_em5ey")
 [node name="ProjectileThrower_Component" parent="." instance=ExtResource("4_w2bsw")]
 position = Vector2(-279.707, 396.464)
 projectile_location = "res://Entity/Projectiles/throwingdagger_projectile.tscn"
+
+[node name="Weapon_Base" parent="." instance=ExtResource("5_h7a22")]
